@@ -1,5 +1,7 @@
 using RefactorThis.Domain.Common;
-using RefactorThis.Persistence;
+using RefactorThis.Domain.Entities;
+using RefactorThis.Domain.Enums;
+using RefactorThis.Domain.Repositories;
 using System;
 using System.Linq;
 
@@ -7,9 +9,9 @@ namespace RefactorThis.Domain
 {
     public class InvoiceService
     {
-        private readonly InvoiceRepository _invoiceRepository;
+        private readonly IInvoiceRepository _invoiceRepository;
 
-        public InvoiceService(InvoiceRepository invoiceRepository)
+        public InvoiceService(IInvoiceRepository invoiceRepository)
         {
             _invoiceRepository = invoiceRepository;
         }
@@ -142,7 +144,7 @@ namespace RefactorThis.Domain
                 }
             }
 
-            inv.Save();
+            _invoiceRepository.SaveInvoice(inv);
 
             return responseMessage;
         }
