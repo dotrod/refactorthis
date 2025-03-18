@@ -41,6 +41,7 @@
     <Compile Include="Common\InvoiceResponse.cs" />
     <Compile Include="Entities\Invoice.cs" />
     <Compile Include="Entities\Payment.cs" />
+    <Compile Include="Enums\InvoiceStatus.cs" />
     <Compile Include="Enums\InvoiceType.cs" />
     <Compile Include="Services\InvoiceService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
